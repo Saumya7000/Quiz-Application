@@ -1,0 +1,35 @@
+<div class="update-container">
+  <h2>Update Test</h2>
+
+  <!-- Checkbox to delete the entire test -->
+  <div class="delete-test-option">
+    <label>
+      <input type="checkbox" [(ngModel)]="question.deleteTest" name="deleteTest" />
+      Delete the entire test
+    </label>
+  </div>
+
+  <!-- Questions List -->
+  <div *ngFor="let test of tests" class="question-card">
+    <div class="question-header">
+      <label>
+        <input type="checkbox" [(ngModel)]="question.toDelete" />
+        Delete this question
+      </label>
+      <h3>{{ question.questionText }}</h3>
+    </div>
+
+    <div class="options">
+      <label><input type="radio" name="option{{ question.id }}" /> {{ question.optionA }}</label>
+      <label><input type="radio" name="option{{ question.id }}" /> {{ question.optionB }}</label>
+      <label><input type="radio" name="option{{ question.id }}" /> {{ question.optionC }}</label>
+      <label><input type="radio" name="option{{ question.id }}" /> {{ question.optionD }}</label>
+    </div>
+  </div>
+
+  <button nz-button nzType="primary" style="margin-right: 5px;">
+            Submit
+          </button>
+
+  <p *ngIf="!questions?.length">Loading question details...</p>
+</div>
