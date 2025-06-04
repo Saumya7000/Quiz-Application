@@ -3,7 +3,7 @@
         <form nz-form [formGroup] = "questionForm" class="login-form" (ngSubmit)="submitForm()">
             <nz-form-label [nzNoColon]="'true'">Question Title</nz-form-label>
             <nz-form-item>
-                <nz-form-control nzErrorTip = "This input is required!">
+                <nz-form-control nzErrorTip = "This Input is required!">
                     <input type="text" nz-input formControlName="questionText" placeholder="Question Text"/>
                 </nz-form-control>
             </nz-form-item>
